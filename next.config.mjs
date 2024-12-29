@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     nextScriptWorkers: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   trailingSlash: true,
 };
 

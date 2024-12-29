@@ -21,23 +21,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE}`}
-        />
-        <script
-          rel="preconnect"
-          id="gtag-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE}');
-    `,
-          }}
-        />
+      {/* <Head>
+   
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-XZ0QSR3Z6R"
@@ -54,10 +39,26 @@ export default function RootLayout({ children }) {
     `,
           }}
         />
-      </Head>
+      </Head> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE}`}
+        />
+        <script
+          rel="preconnect"
+          id="gtag-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE}');
+    `,
+          }}
+        />
         {children}
         <Header />
       </body>
